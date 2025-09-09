@@ -1,0 +1,27 @@
+Problem 1: Sum of Natural Numbers
+Write a JavaScript function that takes a number n as input and returns the sum of all natural numbers from 1 to n.
+Ans: const sumOfInt = (n) => {
+        let ans = 0;
+
+        for(let i = 1;i<=n;i++){ 
+        ans +=i; 
+        }
+
+        return ans;
+    }
+
+    console.log(sumOfInt(5));
+
+Problem 2: Reverse a String
+Write a JavaScript function that takes a string as input and returns the string reversed.
+Ans: const reverseStr = (str) => {
+        let reversed = "";
+        
+        for(let i = str.length-1;i>=0;i--){
+            reversed +=str[i];
+        }
+
+        return reversed; 
+    }
+
+    console.log(reverseStr("hello"))
