@@ -25,3 +25,84 @@ Ans: const reverseStr = (str) => {
     }
 
     console.log(reverseStr("hello"))
+
+Problem 3: Check Prime Number
+Write a JavaScript function that takes a number n and returns true if it’s a prime number, otherwise false.
+Ans: const isPrime = (n) => {
+    if(n<=1) return false;
+
+    for(let i =2;i<n;i++){
+        if(n % i === 0){
+            return false;
+        }
+    }
+
+        return true;
+    }
+
+    console.log(isPrime(5))
+    console.log(isPrime(6))
+
+Problem 4: Find the Largest Number in an Array
+Write a JavaScript function that takes an array of numbers and returns the largest number in it.
+Ans: const findMaxNum = (arr)=>{
+        return Math.max(...arr);
+    }
+    console.log(findMaxNum([1,15,2,9,7,4]));
+    
+    const findMaxNum = (arr)=>{
+    let max = arr[0];    
+    
+    for(let i =1;i<arr.length;i++){
+        if(arr[i]>max) max = arr[i];
+    }
+
+        return max;
+    }
+    console.log(findMaxNum([1,15,2,9,77,4]));
+
+
+Problem 5: Find the Second Largest Number in an Array
+Write a JavaScript function that takes an array of numbers and returns the second largest number.
+Ans: const findSecMaxNum = (arr)=>{
+    if(arr.length < 2) return null;
+
+    let max = -Infinity;    
+    let secMax = -Infinity;
+
+    for(let i =0;i<arr.length;i++){
+        if(arr[i]>max){
+            secMax = max;
+            max = arr[i];
+        }else if(arr[i]>secMax && arr[i] !== max){
+            secMax = arr[i];
+        }
+    }
+
+        return secMax ===  -Infinity?null:secMax;
+        
+    }
+    console.log(findSecMaxNum([10, 5, 8, 20, 15]));
+
+
+Problem 6: Remove Duplicates from an Array
+Write a JavaScript function that takes an array and returns a new array without duplicates.
+Ans: const removeDupli = (arr) => {
+        return [...new Set(arr)]
+    }
+
+    console.log(removeDupli([1, 2, 2, 3, 4, 4, 5]))
+
+    const removeDupli = (arr) => {
+    let uniqueArr = [];
+
+    for(let i =0;i<arr.length;i++){
+        if(!uniqueArr.includes(arr[i])){
+            uniqueArr.push(arr[i])
+        }
+    }
+
+        return uniqueArr ;
+    }
+
+    console.log(removeDupli([1, 2, 2, 3, 4, 4, 5]))
