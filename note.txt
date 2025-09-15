@@ -106,3 +106,81 @@ Ans: const removeDupli = (arr) => {
     }
 
     console.log(removeDupli([1, 2, 2, 3, 4, 4, 5]))
+
+
+Problem 7: Count Frequency of Each Element in an Array
+Write a JavaScript function that takes an array and returns an object showing how many times each element appears.
+Ans: const countFreq = (arr) => {
+    let freq = {};
+
+    for(item of arr){    
+        if(freq[item]){
+            freq[item] += 1;
+        }else{
+            freq[item] = 1;
+        }
+    }
+
+        return freq;
+    }
+
+    console.log(countFreq([1, 2, 2, 3, 1, 4, 2]));
+
+
+Problem 8: Check if a String is a Palindrome
+A palindrome is a word, phrase, number, or sequence that reads the same forwards and backwards.
+Ans: const isPalindrome = (str) => {
+        return str.split('').reverse().join("") === str;
+    }
+
+    console.log(isPalindrome("ollo"));
+
+    const isPalindrome = (str) => {
+    let left = 0;
+    let right = str.length - 1;
+
+    while(left < right){
+        if(str[left] !== str[right]){
+            return false;
+        }
+        left++;
+        right--;
+    }
+
+        return true;
+    
+    }
+
+    console.log(isPalindrome("ollo"));
+
+
+Problem 9: Find the Factorial of a Number
+The factorial of a number n is the product of all positive integers less than or equal to n.
+Ans: const factorialNum = (n) => {   
+    let ans = 1;
+
+    for(let i =1;i<=n;i++){
+        ans *=i;
+    }
+
+        return ans;
+    }
+
+    console.log(factorialNum(5));
+
+Problem 10 (Beginner-Friendly): Find the Smallest Number in an Array
+Ans: const smallestNum = (arr) => {
+    if(arr.length === 0)return undefined;
+
+    let small = arr[0];
+
+    for(let item of arr){
+        if(item < small ){
+            small = item;
+        }
+    }
+
+        return small;
+    }
+
+    console.log(smallestNum([3, 7, 9, 4]));
