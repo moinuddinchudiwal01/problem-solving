@@ -184,3 +184,43 @@ Ans: const smallestNum = (arr) => {
     }
 
     console.log(smallestNum([3, 7, 9, 4]));
+
+Problem 11: Sum of All Numbers in an Array
+Ans: const sumArray = (arr) => arr.reduce((acc,val)=> acc + val ,0)
+     console.log(sumArray([1, 2, 3, 4, 5, 6]))
+
+Problem 12: Write a function to count the number of vowels (a, e, i, o, u) in a given string.
+Ans: const countVowels = (str) => {
+    const vowels = ['a','e','i','o','u']
+    let count = 0;
+
+    for(item of str.toLowerCase()){
+        if(vowels.includes(item)){
+            count++;
+        }
+    }
+
+    return count;
+}
+
+console.log(countVowels("javascript"));
+
+Problem 13: Find the Minimum Number in an Array
+Ans: const findMinNum = (arr) => {
+    return Math.min(...arr)
+}
+
+console.log(findMinNum([5, 3, 9, 1, 7]))
+
+const findMinNum = (arr) => {
+    let min = arr[0];
+
+    for(let i = 1;i<arr.length;i++){
+        if(arr[i] <min) min = arr[i]
+    }
+
+    return min;
+}
+
+console.log(findMinNum([5, 3, 9, 1, 7]))
+
