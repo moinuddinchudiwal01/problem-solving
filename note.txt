@@ -224,3 +224,57 @@ const findMinNum = (arr) => {
 
 console.log(findMinNum([5, 3, 9, 1, 7]))
 
+Problem 13: Count Occurrences of Each Number in an Array
+Ans: const CountOccurrences = (arr) => {
+    return arr.reduce((acc,val)=>{
+        acc[val] = (acc[val]||0)+1
+        return acc;
+    },{})
+}
+
+console.log(CountOccurrences([1, 2, 2, 3, 1, 4, 2]));
+
+Problem 14: Count Characters in a String
+Ans: const CountCharacters = (str) =>{
+   return str.split("").reduce((acc,val)=>{
+    acc[val] = (acc[val]||0)+1;
+    return acc;
+   },{})
+}
+
+console.log(CountCharacters("hello"));
+
+Problem 15: Check if Two Strings Are Anagrams
+Ans: const anagrams = (str1,str2) => {
+    if (str1.length !== str2.length) return false;
+
+    let sortStr1 = str1.split("").sort();
+    let sortStr2 = str2.split("").sort();
+ 
+    return sortStr1.every((val,inx)=>val === sortStr2[inx]) ?true:false    
+
+}
+
+const anagrams = (str1,str2) => {
+    if(str1.length !== str2.length) return false;
+
+    let count1 = {};
+    let count2 = {};
+
+    for(let ch of str1) count1[ch] = (count1[ch]||0)+1;
+    for(let ch of str2) count2[ch] = (count2[ch]||0)+1;
+    
+    for(let key in count1){
+        if(count1[key] !== count2[key]) return false
+    }
+
+    return true;
+}
+console.log(anagrams("listen","silent"));
+
+Problem 16: Remove Duplicates and Square the Numbers
+Ans: const removeDuplAndSqr = (arr) =>{
+    return [...new Set(arr)].map((item)=>item * item)
+}
+
+console.log(removeDuplAndSqr([1, 2, 2, 3]));
