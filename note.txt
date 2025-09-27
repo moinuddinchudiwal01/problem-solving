@@ -278,3 +278,56 @@ Ans: const removeDuplAndSqr = (arr) =>{
 }
 
 console.log(removeDuplAndSqr([1, 2, 2, 3]));
+
+
+Problem 17: Find the Factorial of a Number
+Ans: const getFactorial = (n) => {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+
+    return n * getFactorial(n-1)
+}
+
+console.log(getFactorial(4));
+
+Problem 18: Find All Prime Numbers in an Array
+Ans: // Helper function to check if a number is prime
+const isPrime = (n) => {
+    if (n <= 1) return false;   // 1 and below are not prime
+
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) return false; // divisible by i → not prime
+    }
+    return true;
+}
+
+// Main function to filter prime numbers
+const findPrimes = (arr) => {
+    return arr.filter(num => isPrime(num));
+}
+
+// Test cases
+console.log(findPrimes([1, 2, 3, 4, 5, 6, 7]));  // [2, 3, 5, 7]
+console.log(findPrimes([10, 11, 12, 13, 14, 15])); // [11, 13]
+
+Problem 19: Sum of Squares of Even Numbers
+Ans: const SumOfSquares = (arr) => {        
+return arr
+        .filter((num)=>num % 2===0)
+        .map((num)=> num ** 2)
+        .reduce((acc,val)=>acc+val,0)
+    
+}
+
+console.log(SumOfSquares([1, 2, 3, 4, 5]));
+
+Problem 20: Check if a String is a Palindrome
+Ans: const isPalindrom = (str) => {
+    return str.split("").reverse().join("") === str;
+}
+
+console.log(isPalindrom("racecar"))
+
+Problem 21: Most Frequent Number in an Array
+Ans: 
