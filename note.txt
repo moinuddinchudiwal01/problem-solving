@@ -511,3 +511,52 @@ const flatten = (arr) => {
 
 console.log(flatten([1, [2, [3, 4], 5], 6]));
 
+
+Write a function to find the intersection of two arrays (common elements).
+const intersection = (arr1,arr2) => {
+    let ans = [];
+    
+    for(let i = 0;i<arr1.length;i++){
+        if(arr2.includes(arr1[i])) ans.push(arr1[i]);
+    }
+
+    return ans;
+}
+
+console.log(intersection([1, 2, 3, 4], [3, 4, 5, 6]));
+
+const intersection = (arr1,arr2) => {
+    const set2 = new Set(arr2);
+    return arr1.filter((item)=>set2.has(item))
+}
+
+console.log(intersection([1, 2, 3, 4], [3, 4, 5, 6]));
+
+Write a function to find the union of two arrays (all unique elements from both).
+const union = (arr1,arr2) => {
+    return [...new Set([...arr1,...arr2])]
+}
+
+console.log(union(["a", "b"], ["b", "c", "d"]));
+
+const union = (arr1,arr2) => {
+    let uniq1 = [];
+
+    for(let i = 0;i<arr1.length;i++){
+        if(!uniq1.includes(arr1[i])){
+            uniq1.push(arr1[i])
+        }
+    }
+
+    for(let i = 0;i<arr2.length;i++){
+        if(!uniq1.includes(arr2[i])){
+            uniq1.push(arr2[i])
+        }
+    }
+
+
+    return uniq1;
+}
+
+console.log(union([1, 2, 3], [3, 4, 5]));
+
